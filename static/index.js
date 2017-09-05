@@ -1,5 +1,6 @@
-// import PIXI from 'pixi.js';
-const PIXI = require('pixi.js');
+const ee = function (sel) {
+  return document.querySelector(sel)
+}
 
 
 var app = new PIXI.Application(800, 600, {backgroundColor: 0x1099bb});
@@ -11,28 +12,33 @@ basicText.y = 90;
 
 app.stage.addChild(basicText);
 
+
+
 var style = new PIXI.TextStyle({
     fontFamily: 'Arial',
     fontSize: 36,
     fontStyle: 'italic',
     fontWeight: 'bold',
     fill: ['#ffffff', '#00ff99'], // gradient
-    // stroke: '#4a1850',
-    // strokeThickness: 5,
-    // dropShadow: true,
-    // dropShadowColor: '#000000',
-    // dropShadowBlur: 4,
-    // dropShadowAngle: Math.PI / 6,
-    // dropShadowDistance: 6,
+    stroke: '#4a1850',
+    strokeThickness: 5,
+    dropShadow: true,
+    dropShadowColor: '#000000',
+    dropShadowBlur: 4,
+    dropShadowAngle: Math.PI / 6,
+    dropShadowDistance: 6,
     wordWrap: true,
-    wordWrapWidth: 460
+    wordWrapWidth: 440
 });
+
+
 
 var richText = new PIXI.Text('Rich text with a lot of options and across multiple lines', style);
 richText.x = 30;
 richText.y = 180;
 
 app.stage.addChild(richText);
+
 
 
 
@@ -43,6 +49,7 @@ app.stage.filters = [filter];
 var count = 0;
 
 app.ticker.add(function(delta) {
+
 
     count += 0.1;
 
